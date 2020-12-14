@@ -1,2 +1,2 @@
 # login-najjar
-learning authorization system
+authorization system for future projects.
