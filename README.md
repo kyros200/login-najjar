@@ -33,11 +33,11 @@ Then go to `localhost:3000`
 I hope that someday I'll help someone with this project. My objective here is to comment every meaningful action to show **what** and **why** I'm doing this.
 
 ### TODOs
-[ ] Write a proper README.md
-[ ] Add style to `example-login-najjar`
-[ ] Comment project, both `login-najjar` and `example-login-najjar`
-[X] Check `login-najjar` to be more generic overall
-[ ] On `/changePass`, need to check the old Password first (or anyone can do it lol)
-[ ] e-mail?
-[ ] .env setup
-[ ] first login (create user)
+- [ ] Write a proper README.md
+- [ ] Add style to `example-login-najjar`
+- [ ] Comment project, both `login-najjar` and `example-login-najjar`
+- [X] Check `login-najjar` to be more generic overall
+- [ ] On `/changePass`, need to check the old Password first (or anyone can do it lol)
+- [ ] e-mail?
+- [ ] .env setup
+- [ ] first login (create user)
