@@ -1,10 +1,12 @@
 # login-najjar
-authorization test system for my future projects.
+authorization test system for my future projects. Includes on root folder a simple example `example-login-najjar`.
 
 ## Project Versions
 ***2020-12-14 V0.0*** -> Initial version. It can Login and check token
 
 ***2020-12-15 V0.5*** -> fixed minor things, added front example.
+
+***2020-12-15 V0.6*** -> simplified a lot of things, added checkToken on `example-login-najjar`. Now have a proper TODO.
 
 ## Context
 **Every** idea that I have I always struggle with Authorization System. With this barebones project I intend to use it when I'll make some new projects (personal or freelance)
