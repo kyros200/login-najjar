@@ -2,3 +2,27 @@ node_modules/
 package-lock.json
 .env
 yarn.lock
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+example-login-najjar/node_modules
+example-login-najjar/.pnp
+example-login-najjar/.pnp.js
+
+# testing
+example-login-najjar/coverage
+
+# production
+example-login-najjar/build
+
+# misc
+example-login-najjar/.DS_Store
+example-login-najjar/.env.local
+example-login-najjar/.env.development.local
+example-login-najjar/.env.test.local
+example-login-najjar/.env.production.local
+
+example-login-najjar/npm-debug.log*
+example-login-najjar/yarn-debug.log*
+example-login-najjar/yarn-error.log*

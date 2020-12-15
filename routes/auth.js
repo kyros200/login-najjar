@@ -5,11 +5,11 @@ const { asyncHandler } = require('../helpers/webHelper');
 let route = express.Router();
 
 route.post('/login', async (req, res) => {
-  if (!req.body.stream) return res.sendStatus(401);
+  if (!req.body.login) return res.sendStatus(401);
   if (!req.body.password) return res.sendStatus(401);
 
   try {
-    let token = await auth.loginAttempt({ stream, password } = req.body);
+    let token = await auth.loginAttempt({ login, password } = req.body);
     res.send(token);
   } catch (err) {
     res.sendStatus(err);

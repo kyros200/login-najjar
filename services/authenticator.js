@@ -17,10 +17,10 @@ const generateToken = async (claim) => {
 };
 
 const loginAttempt = async (attemptee) => {
-  const { stream, password} = attemptee;
+  const { login, password} = attemptee;
 
   const usr = await User.query()
-    .where('login', stream)
+    .where('login', login)
     .first();
 
   if (!usr) throw 401;
@@ -30,9 +30,9 @@ const loginAttempt = async (attemptee) => {
   }
 
   return await generateToken({
-    stream: stream,
-    id_stream: usr.id_stream,
-    segredo: 'secret',
+    login: login,
+    id_user: usr.id_user,
+    secret: 'this is a secret',
   });
 };
 
@@ -45,7 +45,7 @@ const setPassword = async (attemptee) => {
     .update({ password: pwd.protect(password, salt), salt: salt })
     .where({ login: stream });
 
-  return 'Td certo';
+  return 'Changed Password!';
 };
 
 const checkToken = (req, res, next) => {
