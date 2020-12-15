@@ -32,13 +32,11 @@ route.post('/changePass', async (req, res) => {
 });
 
 route.get('/checkToken', auth.checkToken, auth.validateToken, (req, res) => {
-    res.json('Token OK');
-  }
-);
+  res.json('Token OK');
+});
 
 route.post('/freeToken', asyncHandler(async (req, res) => {
-    res.send(await auth.generateToken({ id: 0, login: 'su' }));
-  })
-);
+  res.send(await auth.generateToken({ id: 0, login: 'su' }));
+}));
 
 module.exports = route;

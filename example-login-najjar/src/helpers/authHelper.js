@@ -15,14 +15,10 @@ const authFetch = async (path, method = 'GET', data) => {
     },
     redirect: 'follow'
   });
-
-  if (response.status === 403) {
-    logoff();
-    // eslint-disable-next-line no-restricted-globals
-    location.assign("/")
-  }
-  if (response.status !== 200) {
-    //debugger;
+  if (response.status !== 200) { //error 403 should be the only error for logoff
+    if(response.status === 403)
+      logoff();
+    console.log(response);
   }
   return new Promise((resolve, reject) => { resolve(response); });
 }

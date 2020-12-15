@@ -29,11 +29,10 @@ const loginAttempt = async (attemptee) => {
     throw 403;
   }
 
-  return await generateToken({
-    login: login,
-    id_user: usr.id_user,
-    secret: 'this is a secret',
-  });
+  delete usr.password;
+  delete usr.salt;
+  
+  return await generateToken({...usr, secret: "this is a secret"});
 };
 
 const setPassword = async (attemptee) => {

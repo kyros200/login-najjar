@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Context from "../../authComponents/Context";
 import ShowContent from "../../authComponents/ShowContent";
-import { decodeLogin, extractUser, logoff } from "../../helpers/authHelper";
+import { authFetch, decodeLogin, extractUser, logoff } from "../../helpers/authHelper";
 
 const BACKEND_URL = "http://localhost:80"
 
@@ -27,9 +27,10 @@ function LoginPage() {
         })
         .then((result) => {
             const usr = extractUser(result);
-            if (usr) 
+            if (usr){
                 localStorage.setItem('loggedUser', result); //token as localStorage
                 setLoggedUser(decodeLogin(localStorage.getItem('loggedUser'))); //decoded token as state
+            }
         })
         .catch((error) => console.log(error.message));
     };
@@ -37,6 +38,16 @@ function LoginPage() {
     const handleLogoffButton = () => {
         logoff();
         setLoggedUser(undefined);
+    }
+
+    const checkToken = () => {
+        authFetch(`${BACKEND_URL}/auth/checkToken`)
+        .then((res) => {
+            if(res.status === 200)
+                console.log("have token");
+            else
+                console.log("don't have token")
+        });
     }
 
     return (
@@ -51,11 +62,14 @@ function LoginPage() {
             <ShowContent show={true}>
                 <div>
                     <span>
-                        {`I am Signed in as ${decodeLogin()?.login}`}
+                        {`I am Signed in as ${decodeLogin()?.login}. this is a random info: ${decodeLogin()?.randomInfo}`}
                     </span>
                     <button onClick={() => handleLogoffButton()}>Logoff</button>
                 </div>
             </ShowContent>
+            <div>
+                <button onClick={() => checkToken()}>Check if have token (check console)</button>
+            </div>
         </Context.Provider>
     );
 }
