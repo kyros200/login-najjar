@@ -13,13 +13,13 @@ authorization test system for my future projects. Includes on root folder a simp
 
 **It needs MySQL.** Check and Run `script.sql`.
 
-## Installation (login-najjar)
+## Installation (`login-najjar`)
 ```
 npm install
 npm start
 ```
 
-## Installation (example-login-najjar)
+## Installation (`example-login-najjar`)
 Inside root folder, there is the `/example-login-najjar` folder. Inside there just:
 
 *(if you dont have yarn, please type* `npm install -g yarn` *beforehand)*
@@ -30,6 +30,12 @@ yarn start
 ```
 
 Then go to `localhost:3000`
+
+## Features & Examples
+* Create Account
+* Forgot Password
+* Login
+* Check Token
 
 ## Conclusion
 I hope that someday I'll help someone with this project. My objective here is to comment every meaningful action to show **what** and **why** I'm doing this.
@@ -43,3 +49,4 @@ I hope that someday I'll help someone with this project. My objective here is to
 - [ ] e-mail?
 - [ ] .env setup
 - [ ] first login (create user)
+- [ ] forgot Password
